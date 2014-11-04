@@ -20,3 +20,6 @@ project/plugins/project/
 output
 *.jar
 
+# idea
+.idea/
+project/
