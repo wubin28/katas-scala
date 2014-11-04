@@ -19,6 +19,11 @@ class KatasScalaSuite extends FunSuite{
     assert(anotherMsg === "Goodbye cruel world!")
 
   }
+
+  test("define a function") {
+    def max(x: Int, y: Int) = if (x > y) x else y
+    assert(max(5, 7) === (7))
+  }
 }
 
 
