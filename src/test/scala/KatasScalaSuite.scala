@@ -24,6 +24,19 @@ class KatasScalaSuite extends FunSuite{
     def max(x: Int, y: Int) = if (x > y) x else y
     assert(max(5, 7) === (7))
   }
+
+  def maybeItWillReturnSomething(flag: Boolean): Option[String] = {
+    if (flag) Some("Found value") else None
+  }
+
+  test("checking whether option has value") {
+    val value1 = maybeItWillReturnSomething(true)
+    val value2 = maybeItWillReturnSomething(false)
+
+    assert(value1.isEmpty === false)
+    assert(value2.isEmpty === true)
+
+  }
 }
 
 
