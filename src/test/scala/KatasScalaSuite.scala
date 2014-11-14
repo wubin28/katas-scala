@@ -20,9 +20,10 @@ class KatasScalaSuite extends FunSuite{
 
   }
 
-  test("define a function") {
+  test("define a function leaving the result type and curly braces off") {
     def max(x: Int, y: Int) = if (x > y) x else y
-    assert(max(5, 7) === (7))
+//    def max(x, y) = if (x > y) x else y // Scala does not infer function parameter type
+    assert(max(5, 7) === 7)
   }
 
   def maybeItWillReturnSomething(flag: Boolean): Option[String] = {
