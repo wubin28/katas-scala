@@ -26,11 +26,11 @@ class KatasScalaSuite extends FunSuite{
     assert(max(5, 7) === 7)
   }
 
-  def maybeItWillReturnSomething(flag: Boolean): Option[String] = {
-    if (flag) Some("Found value") else None
-  }
-
   test("checking whether option has value") {
+    def maybeItWillReturnSomething(flag: Boolean): Option[String] = {
+      if (flag) Some("Found value") else None
+    }
+
     val value1 = maybeItWillReturnSomething(true)
     val value2 = maybeItWillReturnSomething(false)
 
@@ -38,6 +38,12 @@ class KatasScalaSuite extends FunSuite{
     assert(value2.isEmpty === true)
 
   }
+
+  test("a result type of Unit (could be leaving off) indicates the function returns no interesting value") {
+    def greet() : Unit = println("Hello, world!")
+    val value = greet()
+  }
+
 }
 
 
