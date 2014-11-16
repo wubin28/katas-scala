@@ -1,9 +1,9 @@
 /**
  * Created by ben on 11/16/14.
  */
-class MyAbs {
+object MyAbsObject {
 
-  def abs(n: Int): Int = if (n < 0) -n else n
+  private def abs(n: Int): Int = if (n < 0) -n else n
 
   def formatAbs(x: Int) = {
     val msg = "The absolute value of %d is %d"
