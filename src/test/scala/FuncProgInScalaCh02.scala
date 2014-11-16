@@ -5,10 +5,12 @@ import org.scalatest.FunSuite
  */
 class FuncProgInScalaCh02 extends FunSuite{
 
-  val myAbs = new MyAbs
 
   test("a simple scala program p15") {
-    // Assert
+    // Arrange
+    val myAbs = new MyAbs
+    
+    // Act, Assert
     assert(myAbs.formatAbs(-42) === "The absolute value of -42 is 42")
   }
 }
