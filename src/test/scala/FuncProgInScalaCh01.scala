@@ -14,6 +14,9 @@ class FuncProgInScalaCh01 extends FunSuite{
   }
 
   test("the cost of 12 coffees should be 216 dollars without side effects p7") {
+    val cc = new CreditCard
+    val cafe = new Cafe
+
     // Assert
     assert(cafe.buyCoffees(cc, 12)._2.cost === 216)
   }
