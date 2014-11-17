@@ -10,6 +10,6 @@ class FuncProgInScalaCh01 extends FunSuite{
     val cafe = new Cafe
 
     // Assert
-    assert(cafe.buyCoffee(cc).getClass === (new Coffee).getClass)
+    assert(cafe.buyCoffee(cc).getClass === (new Coffee(18)).getClass)
   }
 }

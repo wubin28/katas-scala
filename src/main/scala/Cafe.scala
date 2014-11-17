@@ -3,7 +3,7 @@
  */
 class Cafe {
   def buyCoffee(cc: CreditCard): Coffee = {
-    val cup = new Coffee
+    val cup = new Coffee(18)
     cc.charge(cup.price)
     cup
   }
