@@ -33,8 +33,13 @@ class HofTest extends FunSuite{
     assert(factorial(5) === 120)
   }
 
+  def formatResult(name: String, n: Int, f: (Int) => Int) = {
+    val msg = "The %s of %d is %d."
+    msg.format(name, n, f(n))
+  }
+
   test("test higher-order function") {
-    assert(formatResult("fibonacci", 3, fibonacci) === "")
-    assert(formatResult("factorial", 5, factorial) === "")
+    assert(formatResult("fibonacci", 3, fibonacci) === "The fibonacci of 3 is 2.")
+    assert(formatResult("factorial", 5, factorial) === "The factorial of 5 is 120.")
   }
 }
