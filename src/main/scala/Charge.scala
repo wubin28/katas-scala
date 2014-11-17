@@ -1,6 +1,6 @@
 /**
  * Created by ben on 11/17/14.
  */
-class Charge {
+case class Charge(cc: CreditCard, cost: Int) {
 
 }

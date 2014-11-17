@@ -4,7 +4,7 @@
 class Cafe {
   def buyCoffee(cc: CreditCard): (Coffee, Charge) = {
     val cup = new Coffee(18)
-    (cup, Charge(cc, cup.price))
+    (cup, new Charge(cc, cup.price))
   }
 
 }
