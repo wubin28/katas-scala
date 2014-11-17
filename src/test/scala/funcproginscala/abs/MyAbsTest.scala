@@ -1,9 +1,11 @@
+package funcproginscala.abs
+
 import org.scalatest.FunSuite
 
 /**
  * Created by ben on 11/15/14.
  */
-class FuncProgInScalaCh02 extends FunSuite{
+class MyAbsTest extends FunSuite{
 
   test("a simple scala program of ABS - object version p15") {
     // Arrange

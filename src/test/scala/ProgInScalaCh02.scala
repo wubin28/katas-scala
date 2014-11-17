@@ -4,11 +4,6 @@ import org.scalatest.FunSuite
  * Created by ben on 11/4/14.
  */
 class ProgInScalaCh02 extends FunSuite{
-  test("the answer to life the universe and everything") {
-    val douglas = new KatasScala
-    assert(douglas.answer() === (42))
-  }
-
   test("a val can never be reassigned but a var can") {
 //    val msg = "Hello, world!"
 //    msg = "Goodbye cruel world!" // Got "error: reassignment to val"

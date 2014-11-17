@@ -1,3 +1,5 @@
+package funcproginscala.abs
+
 /**
  * Created by ben on 11/16/14.
  */
