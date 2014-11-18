@@ -5,7 +5,7 @@ import org.scalatest.FunSuite
 /**
  * Created by ben on 11/17/14.
  */
-class HofTest extends FunSuite{
+class HigherOrderFunctionAndWritingLoopsFunctionally extends FunSuite{
 
   def fibonacci(n: Int): Int = {
     @annotation.tailrec
@@ -25,11 +25,11 @@ class HofTest extends FunSuite{
     go(n, 1)
   }
 
-  test("the 3th fibonacci number is 2") {
+  test("K: writing loops functionally - fibonacci p21") {
     assert(fibonacci(3) === 2)
   }
 
-  test("writing loops functionally: the factorial of 5 is 120 p20") {
+  test("K: writing loops functionally - factorial p20") {
     assert(factorial(5) === 120)
   }
 
@@ -38,7 +38,7 @@ class HofTest extends FunSuite{
     msg.format(name, n, f(n))
   }
 
-  test("test higher-order function") {
+  test("K: higher-order function") {
     assert(formatResult("fibonacci", 3, fibonacci) === "The fibonacci of 3 is 2.")
     assert(formatResult("factorial", 5, factorial) === "The factorial of 5 is 120.")
   }

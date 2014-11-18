@@ -5,7 +5,7 @@ import org.scalatest.FunSuite
 /**
  * Created by ben on 11/15/14.
  */
-class MyAbsTest extends FunSuite{
+class GettingStarted extends FunSuite{
 
   test("a simple scala program of ABS - object version p15") {
     // Arrange
