@@ -28,7 +28,7 @@ class PolymorphicFunction extends FunSuite{
   }
 
   test("Exercise 2.2: Implement isSorted which checks whether an Array[A] is sorted according to a given comparison function p24") {
-    def isSorted[T](as: Array[T], function: (T, T) => Boolean): Boolean = {}
+    def isSorted[T](as: Array[T], ordered: (T, T) => Boolean): Boolean = {}
     assert(isSorted(Array(6, 9, 5, 7), (x: Int, y: Int) => x < y) === false)
     assert(isSorted(Array(5, 6, 7, 9), (x: Int, y: Int) => x < y) === true)
   }
