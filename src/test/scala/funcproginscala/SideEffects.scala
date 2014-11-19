@@ -1,5 +1,6 @@
-package funcproginscala.cafe
+package funcproginscala
 
+import funcproginscala.cafe.{Cafe, CreditCard}
 import org.scalatest.FunSuite
 
 /**

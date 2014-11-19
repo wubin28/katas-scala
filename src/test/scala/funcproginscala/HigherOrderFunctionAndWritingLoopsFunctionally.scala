@@ -1,4 +1,4 @@
-package funcproginscala.hof
+package funcproginscala
 
 import org.scalatest.FunSuite
 

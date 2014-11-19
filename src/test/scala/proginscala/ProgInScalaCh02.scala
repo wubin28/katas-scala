@@ -1,3 +1,5 @@
+package proginscala
+
 import org.scalatest.FunSuite
 
 /**
