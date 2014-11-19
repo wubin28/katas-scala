@@ -6,7 +6,7 @@ import org.scalatest.FunSuite
  * Created by ben on 11/17/14.
  */
 class SideEffects extends FunSuite{
-
+  // TODO: Move to upper package
   test("the cost of one coffee should be 18 dollars with side effects p4") {
     val cc = new CreditCard
     val cafe = new Cafe

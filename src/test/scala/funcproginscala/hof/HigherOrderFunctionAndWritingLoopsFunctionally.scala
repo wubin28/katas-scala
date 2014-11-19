@@ -6,7 +6,7 @@ import org.scalatest.FunSuite
  * Created by ben on 11/17/14.
  */
 class HigherOrderFunctionAndWritingLoopsFunctionally extends FunSuite{
-
+  // TODO: Move to upper package
   def fibonacci(n: Int): Int = {
     @annotation.tailrec
     def go(n: Int, a: Int, b: Int): Int = n match {
@@ -38,7 +38,7 @@ class HigherOrderFunctionAndWritingLoopsFunctionally extends FunSuite{
     msg.format(name, n, f(n))
   }
 
-  test("K: higher-order function") {
+  test("K: higher-order function p21") {
     assert(formatResult("fibonacci", 3, fibonacci) === "The fibonacci of 3 is 2.")
     assert(formatResult("factorial", 5, factorial) === "The factorial of 5 is 120.")
   }
