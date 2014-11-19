@@ -7,9 +7,13 @@ import org.scalatest.FunSuite
  */
 class PolymorphicFunction extends FunSuite{
 
-  def findFirst(ss: Array[String], key: String) = {}
-
   test("K: monomorphic function to find a string in an array p23") {
+    def findFirst(ss: Array[String], key: String) = {
+      @annotation.tailrec
+      def loop(n: Int): Int =
+        if (n >= ss.length) -1 else if (ss(n) == key) n else loop(n + 1)
+      loop(0)
+    }
     assert(findFirst(Array("Susan", "Ben", "Louis"), "Ben") === 1)
   }
 }
