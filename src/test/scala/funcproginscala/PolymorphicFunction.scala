@@ -17,14 +17,13 @@ class PolymorphicFunction extends FunSuite{
     assert(findFirst(Array("Susan", "Ben", "Louis"), "Ben") === 1)
   }
 
-  def findFirst[T](as: Array[T], p: (T) => Boolean): Int = {
-    @annotation.tailrec
-    def loop(n: Int): Int =
-      if (n >= as.length) -1 else if (p(as(n))) n else loop(n + 1)
-    loop(0)
-  }
-
   test("K: polymorphic function to find an element in an array p23") {
+    def findFirst[T](as: Array[T], p: (T) => Boolean): Int = {
+      @annotation.tailrec
+      def loop(n: Int): Int =
+        if (n >= as.length) -1 else if (p(as(n))) n else loop(n + 1)
+      loop(0)
+    }
     assert(findFirst(Array(6, 9, 5, 7), (x: Int) => x == 5) === 2)
   }
 }
