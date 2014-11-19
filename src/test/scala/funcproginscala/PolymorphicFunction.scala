@@ -17,6 +17,8 @@ class PolymorphicFunction extends FunSuite{
     assert(findFirst(Array("Susan", "Ben", "Louis"), "Ben") === 1)
   }
 
+  def findFirst[T](as: Array[T], p: (T) => Boolean): Int = {}
+
   test("K: polymorphic function to find an element in an array p23") {
     assert(findFirst(Array(6, 9, 5, 7), (x: Int) => x == 5) === 2)
   }
