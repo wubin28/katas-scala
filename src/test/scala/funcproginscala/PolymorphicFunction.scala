@@ -6,6 +6,9 @@ import org.scalatest.FunSuite
  * Created by ben on 11/19/14.
  */
 class PolymorphicFunction extends FunSuite{
+
+  def findFirst(ss: Array[String], key: String) = {}
+
   test("K: monomorphic function to find a string in an array p23") {
     assert(findFirst(Array("Susan", "Ben", "Louis"), "Ben") === 1)
   }
