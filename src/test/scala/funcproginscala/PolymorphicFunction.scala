@@ -26,4 +26,9 @@ class PolymorphicFunction extends FunSuite{
     }
     assert(findFirst(Array(6, 9, 5, 7), (x: Int) => x == 5) === 2)
   }
+
+  test("Exercise 2.2: Implement isSorted which checks whether an Array[A] is sorted according to a given comparison function p24") {
+    assert(isSorted(Array(6, 9, 5, 7), (x: Int, y: Int) => x < y) === false)
+    assert(isSorted(Array(5, 6, 7, 9), (x: Int, y: Int) => x < y) === true)
+  }
 }
