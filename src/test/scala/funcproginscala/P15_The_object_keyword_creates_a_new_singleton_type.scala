@@ -15,6 +15,26 @@ class P15_The_object_keyword_creates_a_new_singleton_type extends FunSuite{
   Scala has no equivalent to Java’s static keyword, and an object is often
   used in Scala where you might use a class with static members in Java.
 */
+  class MyAbs {
+
+    private def abs(n: Int): Int = if (n < 0) -n else n
+
+    def formatAbs(x: Int) = {
+      val msg = "The absolute value of %d is %d"
+      msg.format(x, abs(x))
+    }
+  }
+
+  object MyAbsObject {
+
+    private def abs(n: Int): Int = if (n < 0) -n else n
+
+    def formatAbs(x: Int) = {
+      val msg = "The absolute value of %d is %d"
+      msg.format(x, abs(x))
+    }
+  }
+
   test("a simple scala program of ABS - object version p15") {
     // Arrange
     // Act, Assert

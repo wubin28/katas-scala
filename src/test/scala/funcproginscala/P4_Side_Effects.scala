@@ -20,6 +20,31 @@ class P4_Side_Effects extends FunSuite{
     }
   }
 
+  class Cafe {
+    def buyCoffee(cc: CreditCard): (Coffee, Charge) = {
+      val cup = new Coffee(18)
+      (cup, new Charge(cc, cup.price))
+    }
+
+    def buyCoffees(cc: CreditCard, amount: Int): (List[Coffee], Charge) = {
+      val purchases: List[(Coffee, Charge)] = List.fill(amount)(buyCoffee(cc))
+      val (coffees, charges) = purchases.unzip
+      (coffees, charges.reduce((c1,c2) => c1.combine(c2)))
+    }
+
+  }
+
+  case class Charge(cc: CreditCard, cost: Int) {
+    def combine(other: Charge): Charge =
+      if (cc == other.cc)
+        Charge(cc, cost + other.cost)
+      else
+        throw new Exception("Can't combine charges to different cards")
+  }
+
+  class Coffee(val price: Int) {
+  }
+
   test("side effect: actually charges the credit card in a function p4") {
     assert(Cafe.buyCoffeeWithSideEffects(new CreditCard).price === 18);
   }
