@@ -5,7 +5,7 @@ import org.scalatest.FunSuite
 /**
  * Created by ben on 11/23/14.
  */
-class WriteLoopsFunctionally extends FunSuite{
+class P20_Write_Loops_Functionally_Practice extends FunSuite{
 
   test("K: writing loops functionally - factorial p20") {
     def factorial(n: Int): Int = {
@@ -16,7 +16,6 @@ class WriteLoopsFunctionally extends FunSuite{
     }
     assert(factorial(5) === 120)
   }
-
 
   test("K: writing loops functionally - fibonacci p21") {
     def fibonacci(n: Int): Int = {

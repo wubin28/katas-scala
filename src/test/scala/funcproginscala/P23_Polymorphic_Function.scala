@@ -5,7 +5,7 @@ import org.scalatest.FunSuite
 /**
  * Created by ben on 11/19/14.
  */
-class PolymorphicFunction extends FunSuite{
+class P23_Polymorphic_Function extends FunSuite{
 
   test("K: monomorphic function to find a string in an array p23") {
     def findFirst(ss: Array[String], key: String): Int = {
