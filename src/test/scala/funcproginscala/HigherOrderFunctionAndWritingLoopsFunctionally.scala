@@ -6,7 +6,6 @@ import org.scalatest.FunSuite
  * Created by ben on 11/17/14.
  */
 class HigherOrderFunctionAndWritingLoopsFunctionally extends FunSuite{
-  // TODO: Move to upper package
   def fibonacci(n: Int): Int = {
     @annotation.tailrec
     def go(n: Int, a: Int, b: Int): Int = n match {
