@@ -1,6 +1,5 @@
 package funcproginscala
 
-import funcproginscala.abs.{MyAbs, MyAbsObject}
 import org.scalatest.FunSuite
 
 /**
