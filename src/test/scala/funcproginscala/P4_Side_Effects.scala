@@ -8,19 +8,19 @@ import org.scalatest.FunSuite
 class P4_Side_Effects extends FunSuite {
 
   object Cafe {
-    def buyCoffeeWithSideEffects(cc: CreditCard): Coffee = {
+    def buyOneCoffeeWithSideEffects(cc: CreditCard): Coffee = {
       val cup = new Coffee(18)
       cc.charge(cup.price)
       cup
     }
 
-    def buyCoffee(cc: CreditCard): (Coffee, Charge) = {
+    def buyOneCoffee(cc: CreditCard): (Coffee, Charge) = {
       val cup = new Coffee(18)
       (cup, new Charge(cc, cup.price))
     }
 
-    def buyCoffees(cc: CreditCard, amount: Int): (List[Coffee], Charge) = {
-      val purchases: List[(Coffee, Charge)] = List.fill(amount)(buyCoffee(cc))
+    def buyManyCoffees(cc: CreditCard, amount: Int): (List[Coffee], Charge) = {
+      val purchases: List[(Coffee, Charge)] = List.fill(amount)(buyOneCoffee(cc))
       val (coffees, charges) = purchases.unzip
       (coffees, charges.reduce((c1, c2) => c1.combine(c2)))
     }
@@ -43,22 +43,15 @@ class P4_Side_Effects extends FunSuite {
         throw new Exception("Can't combine charges to different cards")
   }
 
-
   test("side effect: actually charges the credit card in a function p4") {
-    assert(Cafe.buyCoffeeWithSideEffects(new CreditCard).price === 18);
+    assert(Cafe.buyOneCoffeeWithSideEffects(new CreditCard).price === 18);
   }
 
-  test("the cost of one coffee should be 18 dollars with side effects p4") {
-    val cc = new CreditCard
-
-    // Assert
-    assert(Cafe.buyCoffee(cc)._2.cost === 18)
+  test("the cost of one coffee should be 18 dollars without side effects p4") {
+    assert(Cafe.buyOneCoffee(new CreditCard)._2.cost === 18)
   }
 
   test("the cost of 12 coffees should be 216 dollars without side effects p7") {
-    val cc = new CreditCard
-
-    // Assert
-    assert(Cafe.buyCoffees(cc, 12)._2.cost === 216)
+    assert(Cafe.buyManyCoffees(new CreditCard, 12)._2.cost === 216)
   }
 }
