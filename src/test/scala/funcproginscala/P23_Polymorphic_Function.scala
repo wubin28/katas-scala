@@ -44,6 +44,22 @@ class P23_Polymorphic_Function extends FunSuite{
   will enforce this fact anywhere we try to call findFirst. If we try to
   search for a String in an Array[Int], for instance, we’ll get a type mismatch error.
 
+  When using HOFs, it’s often convenient to be able to call these functions with
+  anonymous functions or function literals, rather than having to supply some
+  existing named function.
+
+  There is some new syntax here. The expression Array(7, 9, 13) is an array literal.
+  It constructs a new array with three integers in it. Note the lack of a keyword
+  like new to construct the array.
+
+  The syntax (x: Int) => x == 9 is a function literal or anonymous function. Instead
+  of defining this function as a method with a name, we can define it inline using
+  this convenient syntax. This particular function takes one argument called x
+  of type Int, and it returns a Boolean indicating whether x is equal to 9.
+
+  In general, the arguments to the function are declared to the left of the => arrow,
+  and we can then use them in the body of the function to the right of the arrow.
+
 */
   test("K: polymorphic function to find an element in an array p23") {
     def findFirst[T](as: Array[T], p: (T) => Boolean): Int = {
