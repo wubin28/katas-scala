@@ -6,6 +6,26 @@ import org.scalatest.FunSuite
  * Created by twer on 12/13/14.
  */
 class P20_Writing_loops_functionally_and_higher_order_function extends FunSuite {
+/*
+  Tail calls in Scala
+
+  A call is said to be in tail position if the caller does nothing other than
+  return the value of the recursive call. For example, the recursive call to
+  go(n-1,n*acc) we discussed earlier is in tail position, since the method
+  returns the value of this recursive call directly and does nothing else
+  with it. On the other hand, if we said 1 + go(n-1,n*acc), go would no
+  longer be in tail position, since the method would still have work to do
+  when go returned its result (namely, adding 1 to it).
+
+  If all recursive calls made by a function are in tail position, Scala
+  automatically compiles the recursion to iterative loops that don’t consume
+  call stack frames for each iteration. By default, Scala doesn’t tell us
+  if tail call elimination was successful, but if we’re expecting this to
+  occur for a recursive function we write, we can tell the Scala compiler
+  about this assumption using the tailrec annotation (http://mng.bz/ bWT5),
+  so it can give us a compile error if it’s unable to eliminate the tail
+  calls of the function.
+*/
   def factorial(n: Int): Int = {
     @annotation.tailrec
     def go(n: Int, acc: Int): Int =
